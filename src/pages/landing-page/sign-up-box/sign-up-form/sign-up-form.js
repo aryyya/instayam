@@ -8,25 +8,25 @@ const SignUpForm = () => {
           className="sign-up-form__input input has-background-light is-shadowless br-2"
           placeholder="Email"
         />
-      </div>
+      </div> {/* field */}
       <div className="field mb-8">
         <input
           className="sign-up-form__input input has-background-light is-shadowless br-2"
           placeholder="Full Name"
         />
-      </div>
+      </div> {/* field */}
       <div className="field mb-8">
         <input
           className="sign-up-form__input input has-background-light is-shadowless br-2"
           placeholder="Username"
         />
-      </div>
+      </div> {/* field */}
       <div className="field">
         <input
           className="sign-up-form__input input has-background-light is-shadowless br-2"
           placeholder="Password"
         />
-      </div>
+      </div> {/* field */}
       <button className="button is-info is-fullwidth has-text-weight-semibold">Sign up</button>
     </form>
   )

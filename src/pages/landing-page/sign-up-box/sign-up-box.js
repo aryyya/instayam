@@ -15,10 +15,10 @@ const SignUpBox = () => {
           <button className="button is-info is-fullwidth has-text-weight-semibold">
             <span className="icon is-large">
               <i className="fab fa-facebook-square" />
-            </span>
+            </span> {/* icon */}
             <span>Login with Facebook</span>
-          </button>
-          <div className="is-divider" data-content="OR"></div>
+          </button> {/* button */}
+          <div className="is-divider" data-content="OR" />
           <SignUpForm />
           <p className="has-text-grey mt-20">By signing up, you agree to our Terms, Data Policy, and Cookies Policy.</p>
         </div> {/* card-content */}
