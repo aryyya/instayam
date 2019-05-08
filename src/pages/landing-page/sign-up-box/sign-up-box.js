@@ -14,7 +14,7 @@ const SignUpBox = () => {
           <p className="is-size-6 has-text-grey mb-20">Sign up to see photos and videos from your friends.</p>
           <button className="button is-info is-fullwidth has-text-weight-semibold">
             <span className="icon is-large">
-              <i class="fab fa-facebook-square" />
+              <i className="fab fa-facebook-square" />
             </span>
             <span>Login with Facebook</span>
           </button>
