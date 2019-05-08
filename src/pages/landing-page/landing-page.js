@@ -10,8 +10,8 @@ const LandingPage = () => {
           <div className="columns is-centered">
             <div className="column is-narrow">
               <SignUpForm />
-            </div>
-          </div>
+            </div> {/* column */}
+          </div> {/* columns */}
         </div> {/* container */}
       </div> {/* hero-body */}
       <div className="hero-foot">
