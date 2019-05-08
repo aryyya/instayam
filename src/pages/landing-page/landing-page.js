@@ -23,10 +23,8 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setUserName: name => dispatch(setUserName(name))
-  }
+const mapDispatchToProps = {
+  setUserName
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(LandingPage)
