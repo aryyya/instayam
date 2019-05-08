@@ -4,6 +4,7 @@ import './App.css'
 // CSS
 import '@fortawesome/fontawesome-free/css/all.css'
 import 'bulma'
+import 'bulma-extensions/bulma-divider/dist/css/bulma-divider.min.css'
 
 // Router
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'

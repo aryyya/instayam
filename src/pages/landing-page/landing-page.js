@@ -1,30 +1,26 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { setUserName } from '../../store/creators/user'
 
-const LandingPage = ({
-  user,
-  setUserName
-}) => {
-  const modifyUserName = () => {
-    setUserName('Cosmo Kramer')
-  }
+import SignUpForm from './sign-up-form'
 
+const LandingPage = () => {
   return (
-    <div>
-      Hello, {user.name}! <button onClick={modifyUserName}>Change Name</button>
-    </div>
+    <section className="hero is-fullheight is-light">
+      <div className="hero-body">
+        <div className="container">
+          <div className="columns is-centered">
+            <div className="column is-narrow">
+              <SignUpForm />
+            </div>
+          </div>
+        </div> {/* container */}
+      </div> {/* hero-body */}
+      <div className="hero-foot">
+        <div className="container">
+          This is the footer.
+        </div> {/* container */}
+      </div> {/* hero-foot */}
+    </section>
   )
 }
 
-const mapStateToProps = state => {
-  return {
-    user: state.user
-  }
-}
-
-const mapDispatchToProps = {
-  setUserName
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(LandingPage)
+export default LandingPage
