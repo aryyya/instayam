@@ -1,6 +1,6 @@
 import React from 'react'
 
-import SignUpForm from './sign-up-form'
+import SignUpBox from './sign-up-box/sign-up-box'
 
 const LandingPage = () => {
   return (
@@ -9,7 +9,7 @@ const LandingPage = () => {
         <div className="container">
           <div className="columns is-centered">
             <div className="column is-narrow">
-              <SignUpForm />
+              <SignUpBox />
             </div> {/* column */}
           </div> {/* columns */}
         </div> {/* container */}
