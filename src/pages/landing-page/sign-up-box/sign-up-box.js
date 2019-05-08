@@ -11,8 +11,13 @@ const SignUpBox = () => {
       <div className="sign-up-box__top card mb-12">
         <div className="card-content">
           <h1 className="sign-up-box__title title is-size-2">Instayam</h1>
-          <p className="subtitle is-size-6 has-text-grey">Sign up to see photos and videos from your friends.</p>
-          <button className="button is-info is-fullwidth">Login with Facebook</button>
+          <p className="is-size-6 has-text-grey mb-20">Sign up to see photos and videos from your friends.</p>
+          <button className="button is-info is-fullwidth has-text-weight-semibold">
+            <span className="icon is-large">
+              <i class="fab fa-facebook-square" />
+            </span>
+            <span>Login with Facebook</span>
+          </button>
           <div className="is-divider" data-content="OR"></div>
           <SignUpForm />
           <p className="has-text-grey mt-20">By signing up, you agree to our Terms, Data Policy, and Cookies Policy.</p>

@@ -27,7 +27,7 @@ const SignUpForm = () => {
           placeholder="Password"
         />
       </div>
-      <button className="button is-info is-fullwidth">Sign up</button>
+      <button className="button is-info is-fullwidth has-text-weight-semibold">Sign up</button>
     </form>
   )
 }

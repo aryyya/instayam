@@ -7,8 +7,8 @@ const LandingPage = () => {
     <section className="hero is-fullheight is-light">
       <div className="hero-body">
         <div className="container">
-          <div className="columns is-centered">
-            <div className="column is-narrow">
+          <div className="columns">
+            <div className="column">
               <SignUpBox />
             </div> {/* column */}
           </div> {/* columns */}
@@ -16,7 +16,7 @@ const LandingPage = () => {
       </div> {/* hero-body */}
       <div className="hero-foot">
         <div className="container">
-          This is the footer.
+          {/* <p className="has-text-centered">This is the footer.</p> */}
         </div> {/* container */}
       </div> {/* hero-foot */}
     </section>
