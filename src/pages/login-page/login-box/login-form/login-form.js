@@ -1,29 +1,88 @@
 import React from 'react'
+import classnames from 'classnames'
+
+import { errorIcon } from '../../../../common/icons/icons'
+import { Formik, Form, Field, ErrorMessage } from 'formik'
 
 const LoginForm = () => {
-  return (
-    <form className="form">
+
+  const initialValues = {
+    email: '',
+    password: ''
+  }
+
+  const validate = values => {
+    const errors = {}
+    if (!values.email) {
+      errors.email = 'Your email is required.'
+    }
+    if (!values.password) {
+      errors.password = 'Your password is required.'
+    }
+    return errors
+  }
+
+  const onSubmit = (values, { setSubmitting }) => {
+    setTimeout(() => {
+      console.log(JSON.stringify(values, null, 2))
+      setSubmitting(false)
+    }, 1000)
+  }
+
+  const render = ({ isSubmitting }) => (
+    <Form>
       <div className="field mb-8">
         <div className="control has-icons-right">
-          <input
-            className="sign-up-form__input input has-background-light is-shadowless br-2"
+          <Field
+            className="input"
+            type="text"
             name="email"
             placeholder="Email"
           />
+          <ErrorMessage name="email">{() => errorIcon}</ErrorMessage>
         </div> {/* control */}
       </div> {/* field */}
       <div className="field">
         <div className="control has-icons-right">
-          <input
-            className="sign-up-form__input input has-background-light is-shadowless br-2"
-            name="password"
+          <Field
+            className="input"
             type="password"
+            name="password"
             placeholder="Password"
           />
+          <ErrorMessage name="password">{() => errorIcon}</ErrorMessage>
         </div> {/* control */}
       </div> {/* field */}
-      <button className="button is-info is-fullwidth has-text-weight-semibold">Log In</button>
-    </form>
+      <button
+        className={classnames(
+          'button is-fullwidth is-info has-text-weight-semibold',
+          { 'is-loading' : isSubmitting } 
+        )}
+        type="submit"
+        disabled={isSubmitting}
+      >
+        Log In
+      </button>
+      <ErrorMessage
+        className="has-text-danger mt-20"
+        name="email"
+        component="p"
+      />
+      <ErrorMessage
+        className="has-text-danger mt-20"
+        name="password"
+        component="p"
+      />
+    </Form>
+  )
+
+  return (
+    <Formik
+      initialValues={initialValues}
+      validate={validate}
+      onSubmit={onSubmit}
+      render={render}
+    />
   )
 }
 
