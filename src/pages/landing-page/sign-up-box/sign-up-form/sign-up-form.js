@@ -4,7 +4,6 @@ import classnames from 'classnames'
 import { errorIcon } from '../../../../common/icons/icons'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 
-
 const SignUpForm = () => {
 
   const initialValues = {
