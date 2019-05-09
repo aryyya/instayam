@@ -31,6 +31,7 @@ const LoginForm = () => {
 
   const render = ({ isSubmitting }) => (
     <Form>
+      {/* Email */}
       <div className="field mb-8">
         <div className="control has-icons-right">
           <Field
@@ -39,9 +40,10 @@ const LoginForm = () => {
             name="email"
             placeholder="Email"
           />
-          <ErrorMessage name="email">{() => errorIcon}</ErrorMessage>
+          <ErrorMessage name="email" render={() => errorIcon} />
         </div> {/* control */}
       </div> {/* field */}
+      {/* Password */}
       <div className="field">
         <div className="control has-icons-right">
           <Field
@@ -50,29 +52,22 @@ const LoginForm = () => {
             name="password"
             placeholder="Password"
           />
-          <ErrorMessage name="password">{() => errorIcon}</ErrorMessage>
+          <ErrorMessage name="password" render={() => errorIcon} />
         </div> {/* control */}
       </div> {/* field */}
+      {/* Submit */}
       <button
         className={classnames(
           'button is-fullwidth is-info has-text-weight-semibold',
-          { 'is-loading' : isSubmitting } 
+          { 'is-loading' : isSubmitting }
         )}
         type="submit"
         disabled={isSubmitting}
       >
         Log In
       </button>
-      <ErrorMessage
-        className="has-text-danger mt-20"
-        name="email"
-        component="p"
-      />
-      <ErrorMessage
-        className="has-text-danger mt-20"
-        name="password"
-        component="p"
-      />
+      <ErrorMessage className="has-text-danger mt-20" name="email" component="p" />
+      <ErrorMessage className="has-text-danger mt-20" name="password" component="p" />
     </Form>
   )
 
@@ -83,7 +78,6 @@ const LoginForm = () => {
       onSubmit={onSubmit}
       render={render}
       validateOnBlur={false}
-      validateOnChange={false}
     />
   )
 }

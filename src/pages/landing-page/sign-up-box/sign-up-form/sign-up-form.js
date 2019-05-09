@@ -1,109 +1,114 @@
-import React, { useState } from 'react'
+import React from 'react'
+import classnames from 'classnames'
 
-const invalidInputIcon = (
-  <span className="icon is-right has-text-danger">
-    <i className="far fa-times-circle" />
-  </span>
-)
+import { errorIcon } from '../../../../common/icons/icons'
+import { Formik, Form, Field, ErrorMessage } from 'formik'
 
-const hasErrors = errors => {
-  return errors.email || errors.fullName || errors.username || errors.password
-}
-
-const getFirstError = errors => {
-  if (errors.email) return errors.email
-  if (errors.fullName) return errors.fullName
-  if (errors.username) return errors.username
-  if (errors.password) return errors.password
-}
 
 const SignUpForm = () => {
-  const [ errors, setErrors ] = useState({})
 
-  const signUp = event => {
-    event.preventDefault()
-
-    const formData = new FormData(event.target)
-    const email = formData.get('email')
-    const fullName = formData.get('fullName')
-    const username = formData.get('username')
-    const password = formData.get('password')
-
-    const errors = {}
-
-    if (email.length < 1) {
-      errors.email = 'Your email is required.'
-    }
-
-    if (username.length < 6) {
-      errors.username = 'Your username must be 6 characters long or greater.'
-    }
-
-    if (username.length < 1) {
-      errors.username = 'Your username is required.'
-    }
-
-    if (password.length < 8) {
-      errors.password = 'Your password must be 8 characters long or greater.'
-    }
-
-    setErrors(errors)
-
-    if (!hasErrors(errors)) {
-      console.log('Submitting form:', { email, fullName, username, password })
-    }
+  const initialValues = {
+    email: '',
+    fullName: '',
+    username: '',
+    password: ''
   }
 
-  return (
-    <form
-      className="form"
-      onSubmit={signUp}
-      onChange={() => setErrors({})}
-    >
+  const validate = values => {
+    const errors = {}
+    if (!values.email) {
+      errors.email = 'Your email is required.'
+    }
+    if (!values.username) {
+      errors.username = 'Your username is required.'
+    }
+    if (!values.password) {
+      errors.password = 'Your password is required.'
+    }
+    return errors
+  }
+
+  const onSubmit = (values, { setSubmitting }) => {
+    setTimeout(() => {
+      console.log(JSON.stringify(values, null, 2))
+      setSubmitting(false)
+    }, 1000)
+  }
+
+  const render = ({ isSubmitting }) => (
+    <Form>
+      {/* Email */}
       <div className="field mb-8">
         <div className="control has-icons-right">
-          <input
-            className="sign-up-form__input input has-background-light is-shadowless br-2"
+          <Field
+            className="input has-background-light is-shadowless br-2"
+            type="text"
             name="email"
             placeholder="Email"
           />
-          {errors.email ? invalidInputIcon : null}
+          <ErrorMessage name="email" render={() => errorIcon} />
         </div> {/* control */}
       </div> {/* field */}
+      {/* Full Name */}
       <div className="field mb-8">
         <div className="control has-icons-right">
-          <input
-            className="sign-up-form__input input has-background-light is-shadowless br-2"
+          <Field
+            className="input has-background-light is-shadowless br-2"
+            type="text"
             name="fullName"
             placeholder="Full Name"
           />
-          {errors.fullName ? invalidInputIcon : null}
         </div> {/* control */}
       </div> {/* field */}
+      {/* Username */}
       <div className="field mb-8">
         <div className="control has-icons-right">
-          <input
-            className="sign-up-form__input input has-background-light is-shadowless br-2"
+          <Field
+            className="input has-background-light is-shadowless br-2"
+            type="text"
             name="username"
             placeholder="Username"
           />
-          {errors.username ? invalidInputIcon : null}
+          <ErrorMessage name="username" render={() => errorIcon} />
         </div> {/* control */}
       </div> {/* field */}
-      <div className="field">
+      {/* Password */}
+      <div className="field mb-8">
         <div className="control has-icons-right">
-          <input
-            className="sign-up-form__input input has-background-light is-shadowless br-2"
-            name="password"
+          <Field
+            className="input has-background-light is-shadowless br-2"
             type="password"
+            name="password"
             placeholder="Password"
           />
-          {errors.password ? invalidInputIcon : null}
+          <ErrorMessage name="password" render={() => errorIcon} />
         </div> {/* control */}
       </div> {/* field */}
-      <button className="button is-info is-fullwidth has-text-weight-semibold">Sign up</button>
-      {hasErrors(errors) ? <p className="has-text-danger mt-20">{getFirstError(errors)}</p> : null}
-    </form>
+      {/* Submit */}
+      <button
+        className={classnames(
+          'button is-fullwidth is-info has-text-weight-semibold',
+          { 'is-loading' : isSubmitting }
+        )}
+        type="submit"
+        disabled={isSubmitting}
+      >
+        Log In
+      </button>
+      <ErrorMessage className="has-text-danger mt-20" name="email" component="p" />
+      <ErrorMessage className="has-text-danger mt-20" name="username" component="p" />
+      <ErrorMessage className="has-text-danger mt-20" name="password" component="p" />
+    </Form>
+  )
+
+  return (
+    <Formik
+      initialValues={initialValues}
+      validate={validate}
+      onSubmit={onSubmit}
+      render={render}
+      validateOnBlur={false}
+    />
   )
 }
 
