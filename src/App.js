@@ -18,15 +18,10 @@ const App = () => {
     <div className="app">
       <Router>
         <Switch>
-          {/* Landing Page (Sign Up) */}
+          {/* Landing Page */}
           <Route
-            path="/"
+            path={['/', '/login']}
             exact
-            component={LandingPage}
-          />
-          {/* Landing Page (Login) */}
-          <Route
-            path="/login"
             component={LandingPage}
           />
           {/* Not Found Page */}

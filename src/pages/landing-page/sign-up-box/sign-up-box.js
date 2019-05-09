@@ -3,7 +3,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import InstayamTitle from '../../../common/instayam-title/instayam-title'
-import { EntryBox, EntryBoxTop, EntryBoxBottom } from '../../../common/entry-box/entry-box'
+import { EntryBox, EntryBoxTop, EntryBoxBottom } from '../entry-box/entry-box'
 import SignUpForm from './sign-up-form/sign-up-form'
 
 const SignUpBox = () => {
