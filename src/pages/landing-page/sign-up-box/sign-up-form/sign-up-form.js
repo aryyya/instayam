@@ -72,7 +72,7 @@ const SignUpForm = () => {
         </div> {/* control */}
       </div> {/* field */}
       {/* Password */}
-      <div className="field mb-8">
+      <div className="field">
         <div className="control has-icons-right">
           <Field
             className="input has-background-light is-shadowless br-2"
@@ -92,7 +92,7 @@ const SignUpForm = () => {
         type="submit"
         disabled={isSubmitting}
       >
-        Log In
+        Sign up
       </button>
       <ErrorMessage className="has-text-danger mt-20" name="email" component="p" />
       <ErrorMessage className="has-text-danger mt-20" name="username" component="p" />
