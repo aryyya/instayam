@@ -3,6 +3,7 @@ import './sign-up-box.scss'
 
 import { Link } from 'react-router-dom'
 
+import InstayamTitle from '../../../common/instayam-title/instayam-title'
 import SignUpForm from './sign-up-form/sign-up-form'
 
 const SignUpBox = () => {
@@ -10,7 +11,7 @@ const SignUpBox = () => {
     <div className="sign-up-box has-text-centered">
       <div className="sign-up-box__top card mb-12">
         <div className="card-content">
-          <h1 className="sign-up-box__title title is-size-2">Instayam</h1>
+          <InstayamTitle />
           <p className="is-size-6 has-text-grey mb-20">Sign up to see photos and videos from your friends.</p>
           <button className="button is-info is-fullwidth has-text-weight-semibold">
             <span className="icon is-large">

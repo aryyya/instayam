@@ -38,7 +38,7 @@ const SignUpForm = () => {
     if (username.length < 6) {
       errors.username = 'Your username must be 6 characters long or greater.'
     }
-    
+
     if (username.length < 1) {
       errors.username = 'Your username is required.'
     }
