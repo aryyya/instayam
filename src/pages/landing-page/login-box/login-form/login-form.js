@@ -26,7 +26,7 @@ const LoginForm = () => {
     setTimeout(() => {
       console.log(JSON.stringify(values, null, 2))
       setSubmitting(false)
-    }, 1000)
+    }, 2500)
   }
 
   const render = ({ isSubmitting }) => (
