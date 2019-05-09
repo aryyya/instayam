@@ -13,7 +13,7 @@ const LoginBox = () => {
         <InstayamTitle />
         <LoginForm />
         <div className="is-divider" data-content="OR" />
-        <button className="button is-fullwidth has-text-weight-semibold has-text-info ">
+        <button className="button is-fullwidth has-text-weight-semibold has-text-info">
           <span className="icon is-large">
             <i className="fab fa-facebook-square" />
           </span> {/* icon */}
