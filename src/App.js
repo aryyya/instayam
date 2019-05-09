@@ -12,23 +12,22 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 // Pages
 import NotFoundPage from './pages/not-found-page/not-found-page'
 import LandingPage from './pages/landing-page/landing-page'
-import LoginPage from './pages/login-page/login-page'
 
 const App = () => {
   return (
     <div className="app">
       <Router>
         <Switch>
-          {/* Landing Page */}
+          {/* Landing Page (Sign Up) */}
           <Route
-            exact
             path="/"
+            exact
             component={LandingPage}
           />
-          {/* Login Page */}
+          {/* Landing Page (Login) */}
           <Route
             path="/login"
-            component={LoginPage}
+            component={LandingPage}
           />
           {/* Not Found Page */}
           <Route
