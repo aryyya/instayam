@@ -82,6 +82,8 @@ const LoginForm = () => {
       validate={validate}
       onSubmit={onSubmit}
       render={render}
+      validateOnBlur={false}
+      validateOnChange={false}
     />
   )
 }
