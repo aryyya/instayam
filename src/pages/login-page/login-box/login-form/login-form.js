@@ -34,7 +34,7 @@ const LoginForm = () => {
       <div className="field mb-8">
         <div className="control has-icons-right">
           <Field
-            className="input"
+            className="input has-background-light is-shadowless br-2"
             type="text"
             name="email"
             placeholder="Email"
@@ -45,7 +45,7 @@ const LoginForm = () => {
       <div className="field">
         <div className="control has-icons-right">
           <Field
-            className="input"
+            className="input has-background-light is-shadowless br-2"
             type="password"
             name="password"
             placeholder="Password"
