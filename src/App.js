@@ -19,7 +19,7 @@ const App = () => {
         <Switch>
           {/* Landing Page */}
           <Route
-            path={['/', '/login']}
+            path={['/', '/login', '/disclaimer']}
             exact
             component={LandingPage}
           />

@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom'
 
 import SignUpBox from './sign-up-box/sign-up-box'
 import LoginBox from './login-box/login-box'
+import DisclaimerBox from './disclaimer-box/disclaimer-box'
 import Footer from './footer/footer'
 
 const LandingPage = () => {
@@ -22,6 +23,10 @@ const LandingPage = () => {
                 <Route
                   path="/login"
                   component={LoginBox}
+                />
+                <Route
+                  path="/disclaimer"
+                  component={DisclaimerBox}
                 />
               </Switch>
             </div> {/* column */}
