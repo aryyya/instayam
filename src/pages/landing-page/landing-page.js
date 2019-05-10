@@ -25,7 +25,7 @@ const LandingPage = () => {
                   component={LoginBox}
                 />
                 <Route
-                  path="/disclaimer"
+                  path={['/disclaimer', '/disclaimer/**']}
                   component={DisclaimerBox}
                 />
               </Switch>

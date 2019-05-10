@@ -1,20 +1,20 @@
 import React from 'react'
 import './footer.scss'
 
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const links = [
-  'About Us',
-  'Support',
-  'Press',
-  'API',
-  'Jobs',
-  'Privacy',
-  'Terms',
-  'Directory',
-  'Profiles',
-  'Hashtags',
-  'Language'
+  { name: 'About Us',  path: '/disclaimer/about-us'  },
+  { name: 'Support',   path: '/disclaimer/support'   },
+  { name: 'Press',     path: '/disclaimer/press'     },
+  { name: 'API',       path: '/disclaimer/api'       },
+  { name: 'Jobs',      path: '/disclaimer/jobs'      },
+  { name: 'Privacy',   path: '/disclaimer/privacy'   },
+  { name: 'Terms',     path: '/disclaimer/terms'     },
+  { name: 'Directory', path: '/disclaimer/directory' },
+  { name: 'Profiles',  path: '/disclaimer/profiles'  },
+  { name: 'Hashtags',  path: '/disclaimer/hashtags'  },
+  { name: 'Language',  path: '/disclaimer/languages' }
 ]
 
 const Footer = () => {
@@ -25,13 +25,14 @@ const Footer = () => {
           <div className="column has-text-info">
             <div className="columns is-multiline is-mobile is-centered">
               {links.map(link => (
-                <Link
+                <NavLink
                   className="column is-narrow"
-                  key={link}
-                  to="/disclaimer"
+                  key={link.name}
+                  to={link.path}
+                  activeClassName="is-underlined"
                 >
-                  <span className="is-size-7">{link}</span>
-                </Link>
+                  <span className="is-size-7">{link.name}</span>
+                </NavLink>
               ))}
             </div> {/* columns */}
           </div> {/* column */}
