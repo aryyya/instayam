@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom'
 
 import SignUpBox from './sign-up-box/sign-up-box'
 import LoginBox from './login-box/login-box'
+import Footer from './footer/footer'
 
 const LandingPage = () => {
   return (
@@ -28,9 +29,7 @@ const LandingPage = () => {
         </div> {/* container */}
       </div> {/* hero-body */}
       <div className="hero-foot">
-        <div className="container">
-          <p className="has-text-centered">2019</p>
-        </div> {/* container */}
+        <Footer />
       </div> {/* hero-foot */}
     </section>
   )
