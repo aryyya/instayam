@@ -11,6 +11,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 // Pages
 import NotFoundPage from './pages/not-found-page/not-found-page'
 import LandingPage from './pages/landing-page/landing-page'
+import MainPage from './pages/main-page/main-page'
 
 const App = () => {
   return (
@@ -22,6 +23,11 @@ const App = () => {
             path={['/', '/login', '/disclaimer/', '/disclaimer/**']}
             exact
             component={LandingPage}
+          />
+          {/* Main Page */}
+          <Route
+            path="/feed"
+            component={MainPage}
           />
           {/* Not Found Page */}
           <Route
