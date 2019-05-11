@@ -6,7 +6,7 @@ const MainPage = () => {
   return (
     <div>
       <TopNavigationBar />
-      <section className="section has-background-light hero is-fullheight-with-navbar">
+      <section className="section has-background-white-bis hero is-fullheight-with-navbar">
         <div className="container">
           Hello, world!
         </div>

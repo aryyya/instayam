@@ -19,7 +19,7 @@ const links = [
 
 const Footer = () => {
   return (
-    <footer className="footer is-size-7 has-text-weight-semibold has-background-light has-text-centered">
+    <footer className="footer is-size-7 has-text-weight-semibold  has-background-white-bis has-text-centered">
       <div className="container">
         <div className="columns">
           <div className="column has-text-info">

@@ -40,7 +40,7 @@ const SignUpForm = () => {
       <div className="field mb-8">
         <div className="control has-icons-right">
           <Field
-            className="input has-background-light is-shadowless br-2"
+            className="input has-background-white-bis is-shadowless br-2"
             type="text"
             name="email"
             placeholder="Email"
@@ -52,7 +52,7 @@ const SignUpForm = () => {
       <div className="field mb-8">
         <div className="control has-icons-right">
           <Field
-            className="input has-background-light is-shadowless br-2"
+            className="input has-background-white-bis is-shadowless br-2"
             type="text"
             name="fullName"
             placeholder="Full Name"
@@ -63,7 +63,7 @@ const SignUpForm = () => {
       <div className="field mb-8">
         <div className="control has-icons-right">
           <Field
-            className="input has-background-light is-shadowless br-2"
+            className="input has-background-white-bis is-shadowless br-2"
             type="text"
             name="username"
             placeholder="Username"
@@ -75,7 +75,7 @@ const SignUpForm = () => {
       <div className="field">
         <div className="control has-icons-right">
           <Field
-            className="input has-background-light is-shadowless br-2"
+            className="input has-background-white-bis is-shadowless br-2"
             type="password"
             name="password"
             placeholder="Password"

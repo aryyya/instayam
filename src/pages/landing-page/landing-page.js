@@ -9,7 +9,7 @@ import Footer from './footer/footer'
 
 const LandingPage = () => {
   return (
-    <section className="hero is-fullheight is-light">
+    <section className="hero is-fullheight has-background-white-bis">
       <div className="hero-body">
         <div className="container">
           <div className="columns">

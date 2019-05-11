@@ -9,7 +9,7 @@ const TopNavigationBar = () => {
       <div className="container">
         <div className="navbar-brand">
           <div className="navbar-item">
-            <InstayamTitle isSmall={true} />
+            <InstayamTitle isSmall />
           </div>
         </div>
       </div>
