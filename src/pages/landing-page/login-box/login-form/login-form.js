@@ -1,10 +1,14 @@
 import React from 'react'
 import classnames from 'classnames'
 
+import { withRouter } from 'react-router-dom'
+
 import { errorIcon } from '../../../../common/icons/icons'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 
-const LoginForm = () => {
+const LoginForm = ({
+  history
+}) => {
 
   const initialValues = {
     email: '',
@@ -26,6 +30,7 @@ const LoginForm = () => {
     setTimeout(() => {
       console.log(JSON.stringify(values, null, 2))
       setSubmitting(false)
+      history.push('/feed')
     }, 2500)
   }
 
@@ -82,4 +87,4 @@ const LoginForm = () => {
   )
 }
 
-export default LoginForm
+export default withRouter(LoginForm)

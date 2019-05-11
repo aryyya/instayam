@@ -1,10 +1,14 @@
 import React from 'react'
 import classnames from 'classnames'
 
+import { withRouter } from 'react-router-dom'
+
 import { errorIcon } from '../../../../common/icons/icons'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 
-const SignUpForm = () => {
+const SignUpForm = ({
+  history
+}) => {
 
   const initialValues = {
     email: '',
@@ -31,6 +35,7 @@ const SignUpForm = () => {
     setTimeout(() => {
       console.log(JSON.stringify(values, null, 2))
       setSubmitting(false)
+      history.push('/feed')
     }, 2500)
   }
 
@@ -111,4 +116,4 @@ const SignUpForm = () => {
   )
 }
 
-export default SignUpForm
+export default withRouter(SignUpForm)
