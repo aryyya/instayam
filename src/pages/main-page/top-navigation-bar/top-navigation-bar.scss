@@ -1,6 +1,16 @@
 .top-navigation-bar {
   border-bottom: 1px solid #eee;
-  $padding-top-and-bottom: 12px;
-  padding-top: $padding-top-and-bottom;
-  padding-bottom: $padding-top-and-bottom;
+  height: 77px;
+  display: flex;
+  align-items: center;
+}
+
+.top-navigation-bar__logo-separator {
+  border-right: 1px solid #ccc;
+  height: 70%;
+}
+
+.top-navigation-bar__center {
+  flex-grow: 1;
+  justify-content: center;
 }
