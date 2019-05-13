@@ -8,8 +8,8 @@ const InstayamTitle = ({
   return (
     <h1 className={classnames(
       'instayam-title title',
-      { 'is-size-2': !isSmall },
-      { 'is-size-4':  isSmall }
+      { 'is-size-3': !isSmall },
+      { 'is-size-5':  isSmall }
     )}>
       Instayam
     </h1>
