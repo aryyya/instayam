@@ -4,7 +4,7 @@ import './top-navigation-bar.scss'
 import InstayamTitle from '../../../common/instayam-title/instayam-title'
 import SearchBar from './search-bar/search-bar'
 
-const TopNavigationBar = () => {
+const renderDesktop = () => {
   return (
     <nav className="top-navigation-bar navbar is-fixed-top">
       <div className="container">
@@ -19,8 +19,11 @@ const TopNavigationBar = () => {
         </div>
         <div className="navbar-menu">
           <div className="top-navigation-bar__center navbar-start">
-            <div className="navbar-item">
+            <div className="navbar-item is-hidden-mobile">
               <SearchBar />
+            </div>
+            <div className="navbar-item is-hidden-desktop">
+              <InstayamTitle isSmall />
             </div>
           </div>
           <div className="navbar-end">
@@ -44,6 +47,10 @@ const TopNavigationBar = () => {
       </div>
     </nav>
   )
+}
+
+const TopNavigationBar = () => {
+  return renderDesktop()
 }
 
 export default TopNavigationBar

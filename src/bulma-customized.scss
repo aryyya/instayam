@@ -1,5 +1,10 @@
 $widescreen-enabled: false;
 $fullhd-enabled: false;
+$navbar-height: 4.813rem;
+
+.has-navbar-fixed-top {
+  padding-top: $navbar-height;
+}
 
 @import '~bulma/bulma';
 @import '~bulma-extensions/bulma-divider/dist/css/bulma-divider.min';

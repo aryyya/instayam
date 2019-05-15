@@ -4,7 +4,7 @@ import TopNavigationBar from './top-navigation-bar/top-navigation-bar'
 
 const MainPage = () => {
   return (
-    <div>
+    <div className="has-navbar-fixed-top">
       <TopNavigationBar />
       <section className="section has-background-white-bis hero is-fullheight-with-navbar">
         <div className="container">
