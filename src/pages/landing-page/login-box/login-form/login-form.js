@@ -9,6 +9,8 @@ import { Formik, Form, Field, ErrorMessage } from 'formik'
 import { connect } from 'react-redux'
 import { setIsLoggedIn } from '../../../../store/creators/user'
 
+import api from '../../../../api/api'
+
 const LoginForm = ({
   history,
   setIsLoggedIn
@@ -31,12 +33,21 @@ const LoginForm = ({
   }
 
   const onSubmit = (values, { setSubmitting }) => {
-    setTimeout(() => {
-      console.log(JSON.stringify(values, null, 2))
-      setSubmitting(false)
-      setIsLoggedIn(true)
-      history.push('/feed')
-    }, 2500)
+    api.post('/login', {
+      username: values.email,
+      password: values.password
+    })
+      .then(response => {
+        console.log('login success')
+        setIsLoggedIn(true)
+        history.push('/feed')
+      })
+      .catch(error => {
+        console.log('login failure')
+      })
+      .finally(() => {
+        setSubmitting(false)
+      })
   }
 
   const render = ({ isSubmitting }) => (
