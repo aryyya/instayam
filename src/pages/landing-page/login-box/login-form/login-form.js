@@ -1,19 +1,15 @@
 import React from 'react'
 import classnames from 'classnames'
 
-import { withRouter } from 'react-router-dom'
-
 import { errorIcon } from '../../../../common/icons/icons'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 
-import { connect } from 'react-redux'
-import { setIsLoggedIn, setToken } from '../../../../store/creators/user'
+import { withRouter } from 'react-router-dom'
 
-import api from '../../../../api/api'
+import { login } from '../../../../api/api'
 
 const LoginForm = ({
-  history,
-  setIsLoggedIn
+  history
 }) => {
 
   const initialValues = {
@@ -32,23 +28,21 @@ const LoginForm = ({
     return errors
   }
 
-  const onSubmit = (values, { setSubmitting }) => {
-    api.post('/login', {
-      email: values.email,
-      password: values.password
-    })
-      .then(response => {
-        setToken(response.data.token)
-        setIsLoggedIn(true)
-
+  const onSubmit = (
+    { email, password },
+    { setSubmitting }
+  ) => {
+    login({
+      email,
+      password
+    }, {
+      onSuccess () {
         history.push('/feed')
-      })
-      .catch(error => {
-
-      })
-      .finally(() => {
+      },
+      onFailure () {
         setSubmitting(false)
-      })
+      }
+    })
   }
 
   const render = ({ isSubmitting }) => (
@@ -104,12 +98,4 @@ const LoginForm = ({
   )
 }
 
-const mapDispatchToProps = {
-  setIsLoggedIn,
-  setToken
-}
-
-export default connect(
-  null,
-  mapDispatchToProps,
-)(withRouter(LoginForm))
+export default withRouter(LoginForm)
