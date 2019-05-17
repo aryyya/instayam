@@ -6,8 +6,12 @@ import { withRouter } from 'react-router-dom'
 import { errorIcon } from '../../../../common/icons/icons'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 
+import { connect } from 'react-redux'
+import { setIsLoggedIn } from '../../../../store/creators/user'
+
 const LoginForm = ({
-  history
+  history,
+  setIsLoggedIn
 }) => {
 
   const initialValues = {
@@ -30,6 +34,7 @@ const LoginForm = ({
     setTimeout(() => {
       console.log(JSON.stringify(values, null, 2))
       setSubmitting(false)
+      setIsLoggedIn(true)
       history.push('/feed')
     }, 2500)
   }
@@ -87,4 +92,11 @@ const LoginForm = ({
   )
 }
 
-export default withRouter(LoginForm)
+const mapDispatchToProps = {
+  setIsLoggedIn
+}
+
+export default connect(
+  null,
+  mapDispatchToProps,
+)(withRouter(LoginForm))

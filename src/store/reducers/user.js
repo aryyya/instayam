@@ -1,7 +1,8 @@
-import { SET_USER_NAME } from '../types/user'
+import { SET_USER_NAME, SET_IS_LOGGED_IN } from '../types/user'
 
 const defaultUser = {
-  name: 'Jerry Seinfeld'
+  name: 'Jerry Seinfeld',
+  isLoggedIn: false
 }
 
 const user = (state = defaultUser, action) => {
@@ -10,6 +11,11 @@ const user = (state = defaultUser, action) => {
       return {
         ...state,
         name: action.name
+      }
+    case SET_IS_LOGGED_IN:
+      return {
+        ...state,
+        isLoggedIn: action.isLoggedIn
       }
     default:
       return state
