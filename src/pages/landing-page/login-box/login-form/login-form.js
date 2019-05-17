@@ -7,7 +7,7 @@ import { errorIcon } from '../../../../common/icons/icons'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 
 import { connect } from 'react-redux'
-import { setIsLoggedIn } from '../../../../store/creators/user'
+import { setIsLoggedIn, setToken } from '../../../../store/creators/user'
 
 import api from '../../../../api/api'
 
@@ -34,16 +34,17 @@ const LoginForm = ({
 
   const onSubmit = (values, { setSubmitting }) => {
     api.post('/login', {
-      username: values.email,
+      email: values.email,
       password: values.password
     })
       .then(response => {
-        console.log('login success')
+        setToken(response.data.token)
         setIsLoggedIn(true)
+
         history.push('/feed')
       })
       .catch(error => {
-        console.log('login failure')
+
       })
       .finally(() => {
         setSubmitting(false)
@@ -104,7 +105,8 @@ const LoginForm = ({
 }
 
 const mapDispatchToProps = {
-  setIsLoggedIn
+  setIsLoggedIn,
+  setToken
 }
 
 export default connect(
