@@ -1,7 +1,7 @@
 import {
   SET_USER_NAME,
   SET_IS_LOGGED_IN,
-  SET_TOKEN
+  SET_AUTH_TOKEN
 } from '../types/user'
 
 export const setUserName = name => {
@@ -18,9 +18,9 @@ export const setIsLoggedIn = isLoggedIn => {
   }
 }
 
-export const setToken = token => {
+export const setAuthToken = authToken => {
   return {
-    type: SET_TOKEN,
-    token
+    type: SET_AUTH_TOKEN,
+    authToken
   }
 }

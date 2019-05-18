@@ -1,13 +1,13 @@
 import {
   SET_USER_NAME,
   SET_IS_LOGGED_IN,
-  SET_TOKEN
+  SET_AUTH_TOKEN
 } from '../types/user'
 
 const defaultUser = {
   name: 'Jerry Seinfeld',
   isLoggedIn: false,
-  token: ''
+  authToken: ''
 }
 
 const user = (state = defaultUser, action) => {
@@ -22,10 +22,10 @@ const user = (state = defaultUser, action) => {
         ...state,
         isLoggedIn: action.isLoggedIn
       }
-    case SET_TOKEN:
+    case SET_AUTH_TOKEN:
       return {
         ...state,
-        token: action.token
+        authToken: action.authToken
       }
     default:
       return state

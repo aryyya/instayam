@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 import store from '../store/store'
-import { setIsLoggedIn, setToken } from '../store/creators/user'
+import { setIsLoggedIn, setAuthToken } from '../store/creators/user'
 
 const dispatch = store.dispatch
 
@@ -14,13 +14,32 @@ export const login = async (
   { onSuccess, onFailure }
 ) => {
   try {
-    const response = await api.post('/login', {
-      email,
+    const response = await api.post('/auth/login', {
+      username: email,
       password
     })
 
     dispatch(setIsLoggedIn(true))
-    dispatch(setToken(response.data.token))
+    dispatch(setAuthToken(response.data.authToken))
+
+    onSuccess()
+  }
+  catch (error) {
+    onFailure()
+  }
+}
+
+export const getSecret = async (
+  { onSuccess, onFailure }
+) => {
+  try {
+    const response = await api.get('/resource/secret', {
+      headers: {
+        'Authorization': `Bearer ${store.getState().user.authToken}`
+      }
+    })
+
+    console.log(response.data)
 
     onSuccess()
   }
