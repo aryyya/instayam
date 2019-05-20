@@ -1,6 +1,6 @@
 # instayam
 
-A single page application clone of Instagram built on React, Redux and Bulma, with a Django backend.
+The client for an Instagram clone, built on React, Redux, and Bulma.
 
 ## Screenshots
 
